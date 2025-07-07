@@ -1,6 +1,6 @@
 # 🐈 Tincat
 
-Tindog is a fun and responsive landing page inspired by Tinder, but for cats!  
+Tincat is a fun and responsive landing page inspired by Tinder, but for cats!  
 It showcases a fictional service where dogs can connect with other dogs nearby.
 
 ## 📌 Features
