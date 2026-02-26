@@ -1,10 +1,14 @@
 import { nanoid } from "nanoid";
-import { links } from "./navlinks";
+import { links } from "../../contexts/navlinks";
 import { LuMenu } from "react-icons/lu";
+import { IoClose } from "react-icons/io5";
+import { UseGlobalContext } from "../../contexts/globalContext";
 
 function Navbar() {
+  const { isSidebarOpen, toggleSidebar } = UseGlobalContext();
+
   return (
-    <header className="border-base-200 sticky top-0 z-50 border-b px-4 py-2 shadow-sm backdrop-blur-md">
+    <header className="border-base-200 sticky top-0 z-1 border-b px-4 py-2 shadow-sm backdrop-blur-md">
       <nav className="mx-auto flex max-w-7xl items-center justify-between">
         <div className="flex items-center gap-2">
           <div className="w-fit rounded-full bg-white p-1 shadow-sm">
@@ -30,8 +34,12 @@ function Navbar() {
           </button>
         </a>
 
-        <button type="button" className="block md:hidden btn btn-square btn-ghost text-2xl">
-          <LuMenu></LuMenu>
+        <button
+          type="button"
+          className="btn btn-square btn-ghost grid place-items-center text-2xl md:hidden"
+          onClick={toggleSidebar}
+        >
+          {isSidebarOpen ? <IoClose></IoClose> : <LuMenu></LuMenu>}
         </button>
       </nav>
     </header>
