@@ -7,6 +7,7 @@ export type linksType = {
 export type brandContentType = {
   brandName: string;
   brandIconSrc: string;
+  brandIconAlt: string;
 };
 
 export const links: linksType[] = [
@@ -30,4 +31,5 @@ export const links: linksType[] = [
 export const brandContent: brandContentType = {
   brandName: "Tincat",
   brandIconSrc: brandIcon,
+  brandIconAlt: "Tincat brand icon",
 };
