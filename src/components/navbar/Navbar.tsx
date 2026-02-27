@@ -1,8 +1,8 @@
 import { nanoid } from "nanoid";
-import { links } from "../../contexts/navlinks";
+import { links, type linksType } from "../../contexts/navlinks.ts";
 import { LuMenu } from "react-icons/lu";
 import { IoClose } from "react-icons/io5";
-import { UseGlobalContext } from "../../contexts/globalContext";
+import { UseGlobalContext } from "../../contexts/globalContext.tsx";
 
 function Navbar() {
   const { isSidebarOpen, toggleSidebar } = UseGlobalContext();
@@ -46,7 +46,7 @@ function Navbar() {
   );
 }
 
-function NavLinks({ text }) {
+function NavLinks({ text }: linksType) {
   return (
     <>
       <li>
