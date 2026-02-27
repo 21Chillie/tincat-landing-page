@@ -1,9 +1,11 @@
 import { nanoid } from "nanoid";
-import { links } from "../../contexts/navlinks";
+import { links } from "./navigationContent";
 import { UseGlobalContext } from "../../contexts/globalContext";
+import { brandContent } from "./navigationContent";
 
 function Sidebar() {
   const { isSidebarOpen, toggleSidebar } = UseGlobalContext();
+  const { brandIconSrc, brandIconAlt, brandName } = brandContent;
 
   return (
     <>
@@ -18,14 +20,10 @@ function Sidebar() {
         <nav className="p-6">
           <div className="mb-4 flex items-center gap-2">
             <div className="w-fit rounded-full bg-white p-1 shadow-sm">
-              <img
-                className="h-8 w-8"
-                src="/images/web-brand/icon-dog.webp"
-                alt="navbar brand"
-              />
+              <img className="h-8 w-8" src={brandIconSrc} alt={brandIconAlt} />
             </div>
 
-            <span className="text-3xl font-bold">Tincat</span>
+            <span className="text-3xl font-bold">{brandName}</span>
           </div>
 
           <ul>

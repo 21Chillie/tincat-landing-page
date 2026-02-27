@@ -1,11 +1,12 @@
 import { nanoid } from "nanoid";
-import { links, type linksType } from "../../contexts/navlinks.ts";
+import { brandContent, links, type linksType } from "./navigationContent.ts";
 import { LuMenu } from "react-icons/lu";
 import { IoClose } from "react-icons/io5";
 import { UseGlobalContext } from "../../contexts/globalContext.tsx";
 
 function Navbar() {
   const { isSidebarOpen, toggleSidebar } = UseGlobalContext();
+  const { brandIconSrc, brandName, brandIconAlt } = brandContent;
 
   return (
     <header className="border-base-200 sticky top-0 z-1 border-b px-4 py-2 shadow-sm backdrop-blur-md">
@@ -14,12 +15,12 @@ function Navbar() {
           <div className="w-fit rounded-full bg-white p-1 shadow-sm">
             <img
               className="h-8 w-8"
-              src="/images/web-brand/icon-dog.webp"
-              alt="navbar brand"
+              src={brandIconSrc}
+              alt={brandIconAlt}
             />
           </div>
 
-          <span className="text-3xl font-bold">Tincat</span>
+          <span className="text-3xl font-bold">{brandName}</span>
         </div>
 
         <ul className="hidden md:flex">

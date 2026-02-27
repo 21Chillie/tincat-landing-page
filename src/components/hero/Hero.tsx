@@ -1,7 +1,10 @@
-import heroImg from "../../assets/images/heroes-section/hero-img.webp";
 import { RiStarSFill } from "react-icons/ri";
+import { heroContent } from "./heroContent";
 
 function Hero() {
+  const { title, description, imageSrc, imageAlt, rating, totalReviews } =
+    heroContent;
+
   return (
     <>
       <section
@@ -11,14 +14,9 @@ function Hero() {
         <header className="mx-auto grid max-w-7xl grid-cols-1 md:grid-cols-2">
           <div className="flex flex-col justify-center text-center md:text-left">
             <h1 className="text-base-content mb-6 text-5xl font-extrabold">
-              Meet The Purr-fect Matchmakers
+              {title}
             </h1>
-            <p className="text-base-content/70 text-lg">
-              In a world where every whisker tells a tale, our determined feline
-              heroes are on a mission to make tails wag and hearts purr! They
-              are the love champions, whiskered wingmen, and supreme matchmakers
-              in the cat kingdom.
-            </p>
+            <p className="text-base-content/70 text-lg">{description}</p>
 
             <div className="mt-6 flex flex-col items-center gap-4 md:flex-row">
               <button
@@ -31,15 +29,15 @@ function Hero() {
               <div className="flex flex-col items-center md:items-start">
                 <div className="flex items-center gap-2">
                   <div className="flex items-center text-yellow-600">
-                    {Array.from({ length: 5 }).map((_, i) => {
+                    {Array.from({ length: rating }).map((_, i) => {
                       return <RiStarSFill key={i}></RiStarSFill>;
                     })}
                   </div>
-                  <span className="text-base font-bold">5.0</span>
+                  <span className="text-base font-bold">{rating}.0</span>
                 </div>
 
                 <p className="text-base">
-                  from 1000+
+                  from {totalReviews}+
                   <span className="font-bold underline"> reviews</span>
                 </p>
               </div>
@@ -47,7 +45,11 @@ function Hero() {
           </div>
 
           <figure className="hidden justify-center md:flex">
-            <img className="md:max-w-64 lg:max-w-72" src={heroImg} alt="" />
+            <img
+              className="md:max-w-64 lg:max-w-72"
+              src={imageSrc}
+              alt={imageAlt}
+            />
           </figure>
         </header>
       </section>
