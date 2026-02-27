@@ -29,7 +29,10 @@ function Navbar() {
         </ul>
 
         <a className="hidden md:block" href="#">
-          <button className="btn btn-primary text-base" type="button">
+          <button
+            className="btn btn-circle btn-accent px-10 font-bold"
+            type="button"
+          >
             Login
           </button>
         </a>

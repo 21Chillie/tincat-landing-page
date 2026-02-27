@@ -1,3 +1,4 @@
+import Main from "./components/Main";
 import Navbar from "./components/navbar/Navbar";
 import Sidebar from "./components/sidebar/Sidebar";
 
@@ -6,6 +7,7 @@ function App() {
     <div className="flex min-h-screen min-w-screen flex-col">
       <Navbar></Navbar>
       <Sidebar></Sidebar>
+      <Main></Main>
     </div>
   );
 }
