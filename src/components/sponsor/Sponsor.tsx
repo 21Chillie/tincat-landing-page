@@ -1,4 +1,4 @@
-import { sponsors } from "../../contexts/sponsor";
+import { sponsors } from "./sponsorContent";
 
 function Sponsor() {
   return (
