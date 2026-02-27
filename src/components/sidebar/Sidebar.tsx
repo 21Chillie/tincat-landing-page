@@ -8,12 +8,12 @@ function Sidebar() {
   return (
     <>
       <div
-        className={`fixed inset-0 z-2 bg-black/30 transition-opacity duration-300 ${isSidebarOpen ? "opacity-100" : "pointer-events-none opacity-0"}`}
+        className={`fixed inset-0 z-2 bg-black/30 transition-opacity duration-300 ${isSidebarOpen ? "opacity-100" : "pointer-events-none block opacity-0 md:hidden"}`}
         onClick={toggleSidebar}
       ></div>
 
       <aside
-        className={`${isSidebarOpen ? "translate-x-0" : "-translate-x-full"} bg-base-100 absolute z-3 h-screen transition-transform`}
+        className={`${isSidebarOpen ? "translate-x-0" : "-translate-x-full"} bg-base-100 absolute z-3 block h-screen transition-transform md:hidden`}
       >
         <nav className="p-6">
           <div className="mb-4 flex items-center gap-2">
