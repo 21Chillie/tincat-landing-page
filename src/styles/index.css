@@ -1,6 +1,11 @@
+@import "./cabinet-grotesk.css";
 @import "tailwindcss";
 @plugin "daisyui" {
   themes: caramellatte --default;
+}
+
+body {
+  font-family: "CabinetGrotesk-Variable", sans-serif;
 }
 
 button {
