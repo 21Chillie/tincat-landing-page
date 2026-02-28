@@ -1,4 +1,4 @@
-import heroImg from "../../assets/images/heroes-section/hero-img.webp";
+import heroImg from "../assets/images/heroes-section/hero-img.webp";
 
 type heroContentType = {
   title: string;
@@ -7,6 +7,7 @@ type heroContentType = {
   imageAlt: string;
   rating: 1 | 2 | 3 | 4 | 5;
   totalReviews: number;
+  cta: string;
 };
 
 export const heroContent: heroContentType = {
@@ -17,4 +18,5 @@ export const heroContent: heroContentType = {
   imageAlt: "tincat hero image",
   rating: 5,
   totalReviews: 1000,
+  cta: "Get Started",
 };

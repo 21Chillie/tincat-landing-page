@@ -1,7 +1,7 @@
 @import "./cabinet-grotesk.css";
 @import "tailwindcss";
 @plugin "daisyui" {
-  themes: caramellatte --default;
+  themes: all;
 }
 
 body {

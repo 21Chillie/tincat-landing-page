@@ -1,4 +1,12 @@
-import { createContext, useContext, useState, type ReactNode } from "react";
+import {
+  createContext,
+  useContext,
+  useState,
+  useEffect,
+  type ReactNode,
+} from "react";
+
+import { type ThemeType, selectedTheme } from "../content/setTheme";
 
 type providerValueType = {
   isSidebarOpen: boolean;
@@ -9,10 +17,25 @@ const GlobalContext = createContext<providerValueType | null>(null);
 
 export function AppProvider({ children }: { children: ReactNode }) {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+  const [theme] = useState<ThemeType>(selectedTheme || "caramellatte");
 
   const toggleSidebar = () => {
     setIsSidebarOpen((prev) => !prev);
   };
+
+  const changeTheme = (themeName: ThemeType | "") => {
+    const html = document.documentElement;
+    if (!themeName) {
+      html.setAttribute("data-theme", "caramellatte");
+      return;
+    }
+
+    html.setAttribute("data-theme", themeName);
+  };
+
+  useEffect(() => {
+    changeTheme(theme);
+  }, [theme]);
 
   return (
     <GlobalContext.Provider value={{ isSidebarOpen, toggleSidebar }}>

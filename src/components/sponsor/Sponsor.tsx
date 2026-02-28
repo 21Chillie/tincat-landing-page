@@ -1,4 +1,4 @@
-import { sponsors } from "./sponsorContent";
+import { sponsors } from "../../content/sponsorContent";
 
 function Sponsor() {
   return (
@@ -11,15 +11,13 @@ function Sponsor() {
           <p className="font-bold">More than 100+ companies partner</p>
           <ul className="grid grid-cols-4 place-items-center gap-4">
             {sponsors.map((sponsor, index) => {
-              const { name, imgSrc } = sponsor;
+              const { imgSrc } = sponsor;
               return (
                 <li key={index}>
-                  <div className="bg-base-100 hover:bg-base-300 hover:outline-base-content/30 t flex h-32 w-32 items-center justify-center rounded-full p-4 transition-all hover:shadow-lg">
-                    <img
-                      className="max-w-24"
-                      src={imgSrc}
-                      alt={`${name} logo`}
-                    />
+                  <div className="bg-base-100 hover:bg-base-300 hover:text-primary hover:shadow-accent-content rounded-full transition-all hover:shadow-lg">
+                    <span className="flex h-32 w-32 items-center justify-center p-4 text-7xl">
+                      {imgSrc}
+                    </span>
                   </div>
                 </li>
               );
