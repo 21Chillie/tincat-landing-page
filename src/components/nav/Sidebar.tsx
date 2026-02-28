@@ -15,7 +15,7 @@ function Sidebar() {
       ></div>
 
       <aside
-        className={`${isSidebarOpen ? "translate-x-0" : "-translate-x-full"} bg-base-100 absolute z-3 block h-screen transition-transform md:hidden`}
+        className={`${isSidebarOpen ? "translate-x-0" : "-translate-x-full"} bg-base-100 fixed z-3 block h-screen transition-transform md:hidden`}
       >
         <nav className="p-6">
           <div className="mb-4 flex items-center gap-2">
@@ -33,7 +33,7 @@ function Sidebar() {
               return (
                 <li className="w-52" key={nanoid()}>
                   <a
-                    className="active:bg-base-200 block rounded-md py-2 capitalize transition-all active:px-2"
+                    className="active:bg-base-200 block rounded-full py-2 capitalize transition-all active:px-4"
                     href="#"
                   >
                     {text}
