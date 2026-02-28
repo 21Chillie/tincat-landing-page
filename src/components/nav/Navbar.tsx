@@ -1,5 +1,7 @@
 import { nanoid } from "nanoid";
-import { brandContent, links, type linksType } from "./navigationContent.ts";
+import { links, type linksType } from "../../content/navigationContent.ts";
+
+import { brandContent } from "../../content/brandContent.ts";
 import { LuMenu } from "react-icons/lu";
 import { IoClose } from "react-icons/io5";
 import { UseGlobalContext } from "../../contexts/globalContext.tsx";
@@ -12,7 +14,7 @@ function Navbar() {
     <header className="border-base-200 sticky top-0 z-1 border-b px-4 py-2 shadow-sm backdrop-blur-2xl">
       <nav className="mx-auto flex max-w-7xl items-center justify-between">
         <div className="flex items-center gap-2">
-          <div className="w-fit rounded-full bg-white p-1 shadow-sm">
+          <div className="bg-base-300 w-fit rounded-full p-1 shadow-sm">
             <img className="h-8 w-8" src={brandIconSrc} alt={brandIconAlt} />
           </div>
 
@@ -51,7 +53,7 @@ function NavLinks({ text }: linksType) {
     <>
       <li>
         <a
-          className="hover:bg-base-200 px-5 py-3 text-base capitalize transition-colors duration-300 rounded-full"
+          className="hover:bg-accent-content hover:text-accent rounded-full px-5 py-3 text-base capitalize transition-colors duration-300 font-medium"
           href="#"
         >
           {text}
