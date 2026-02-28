@@ -37,8 +37,8 @@ function Hero() {
                 </div>
 
                 <p className="text-base">
-                  from {totalReviews}+
-                  <span className="font-bold underline"> reviews</span>
+                  from {totalReviews}+ {""}
+                  <span className="font-bold underline">reviews</span>
                 </p>
               </div>
             </div>
