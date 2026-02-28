@@ -1,8 +1,8 @@
 import { RiStarSFill } from "react-icons/ri";
-import { heroContent } from "./heroContent";
+import { heroContent } from "../../content/heroContent";
 
 function Hero() {
-  const { title, description, imageSrc, imageAlt, rating, totalReviews } =
+  const { title, description, imageSrc, imageAlt, rating, totalReviews, cta } =
     heroContent;
 
   return (
@@ -20,15 +20,15 @@ function Hero() {
 
             <div className="mt-6 flex flex-col items-center gap-4 md:flex-row">
               <button
-                className="btn btn-circle btn-wide btn-accent text-base-200 text-lg font-bold"
+                className="btn btn-circle btn-wide btn-accent text-lg font-bold"
                 type="button"
               >
-                Get Started
+                {cta}
               </button>
 
               <div className="flex flex-col items-center md:items-start">
                 <div className="flex items-center gap-2">
-                  <div className="flex items-center text-yellow-600">
+                  <div className="text-warning flex items-center">
                     {Array.from({ length: rating }).map((_, i) => {
                       return <RiStarSFill key={i}></RiStarSFill>;
                     })}
