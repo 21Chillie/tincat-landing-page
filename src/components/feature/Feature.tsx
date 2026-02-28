@@ -1,13 +1,19 @@
-import { featureHeader } from "../../content/featureContent";
+import { nanoid } from "nanoid";
+import {
+  featureHeaderContent,
+  featureCardsContent,
+  type featureCardContentType,
+  productImageContent,
+} from "../../content/featureContent";
 
 export function Feature() {
-  const { title, description, label } = featureHeader;
+  const { title, description, label } = featureHeaderContent;
 
   return (
     <>
       <section id="feature-section" className="mx-auto px-4 py-12">
         <div className="mx-auto max-w-7xl">
-          <header className="flex items-center justify-between gap-4">
+          <header className="mb-6 flex items-center justify-between gap-4">
             <div className="flex-1 space-y-1">
               <p className="text-accent font-medium">{label}</p>
               <h2 className="text-4xl font-bold">{title}</h2>
@@ -17,8 +23,48 @@ export function Feature() {
               {description}
             </p>
           </header>
+
+          <article className="bg-base-200 outline-base-300 grid grid-cols-2 gap-4 rounded-2xl p-3 outline-1 md:grid-cols-4 md:px-6 md:pt-6 md:pb-0">
+            {featureCardsContent.map(
+              (content: featureCardContentType, index) => {
+                if (index === 0) {
+                  return (
+                    <FeatureCard key={nanoid()} {...content}></FeatureCard>
+                  );
+                }
+              },
+            )}
+
+            <figure className="col-span-2 row-span-2 hidden md:grid md:place-items-end">
+              <img src={productImageContent.firstImgSrc} alt="" />
+            </figure>
+
+            {featureCardsContent.map(
+              (content: featureCardContentType, index) => {
+                if (index > 0) {
+                  return (
+                    <FeatureCard key={nanoid()} {...content}></FeatureCard>
+                  );
+                }
+              },
+            )}
+          </article>
         </div>
       </section>
     </>
+  );
+}
+
+function FeatureCard({ title, description, icon }: featureCardContentType) {
+  return (
+    <div className="col-span-1 space-y-2 lg:space-y-0">
+      <div className="bg-base-300 w-fit rounded-2xl p-2 text-accent">
+        <span className="text-4xl">{icon}</span>
+      </div>
+      <h3 className="text-3xl font-bold lg:leading-relaxed">{title}</h3>
+      <p className="text-base-content/70 text-base text-pretty">
+        {description}
+      </p>
+    </div>
   );
 }
