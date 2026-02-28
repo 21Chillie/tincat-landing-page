@@ -1,4 +1,4 @@
-import { featureHeader } from "./featureContent";
+import { featureHeader } from "../../content/featureContent";
 
 export function Feature() {
   const { title, description, label } = featureHeader;
@@ -9,7 +9,7 @@ export function Feature() {
         <div className="mx-auto max-w-7xl">
           <header className="flex items-center justify-between gap-4">
             <div className="flex-1 space-y-1">
-              <p className="text-primary font-medium">{label}</p>
+              <p className="text-accent font-medium">{label}</p>
               <h2 className="text-4xl font-bold">{title}</h2>
             </div>
 
