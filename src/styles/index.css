@@ -1,7 +1,18 @@
-@import "./cabinet-grotesk.css";
 @import "tailwindcss";
 @plugin "daisyui" {
   themes: all;
+}
+
+/* Variable font */
+@font-face {
+  font-family: "CabinetGrotesk-Variable";
+  src:
+    url("../assets/fonts/CabinetGrotesk-Variable.woff2") format("woff2"),
+    url("../assets/fonts/CabinetGrotesk-Variable.woff") format("woff"),
+    url("../assets/fonts/CabinetGrotesk-Variable.ttf") format("truetype");
+  font-weight: 100 900;
+  font-display: swap;
+  font-style: normal;
 }
 
 body {
