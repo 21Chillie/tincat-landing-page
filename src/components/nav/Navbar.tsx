@@ -9,15 +9,11 @@ function Navbar() {
   const { brandIconSrc, brandName, brandIconAlt } = brandContent;
 
   return (
-    <header className="border-base-200 sticky top-0 z-1 border-b px-4 py-2 shadow-sm backdrop-blur-md">
+    <header className="border-base-200 sticky top-0 z-1 border-b px-4 py-2 shadow-sm backdrop-blur-2xl">
       <nav className="mx-auto flex max-w-7xl items-center justify-between">
         <div className="flex items-center gap-2">
           <div className="w-fit rounded-full bg-white p-1 shadow-sm">
-            <img
-              className="h-8 w-8"
-              src={brandIconSrc}
-              alt={brandIconAlt}
-            />
+            <img className="h-8 w-8" src={brandIconSrc} alt={brandIconAlt} />
           </div>
 
           <span className="text-3xl font-bold">{brandName}</span>
@@ -54,7 +50,10 @@ function NavLinks({ text }: linksType) {
   return (
     <>
       <li>
-        <a className="btn btn-ghost text-base capitalize" href="#">
+        <a
+          className="hover:bg-base-200 px-5 py-3 text-base capitalize transition-colors duration-300 rounded-full"
+          href="#"
+        >
           {text}
         </a>
       </li>
