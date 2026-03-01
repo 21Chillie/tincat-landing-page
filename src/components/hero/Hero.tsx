@@ -47,7 +47,7 @@ function Hero() {
           <figure className="hidden justify-center md:flex">
             <img
               fetchPriority="high"
-              className="md:max-w-64 lg:max-w-72"
+              className="h-full w-full object-contain md:max-w-64 lg:max-w-72"
               src={imageSrc}
               alt={imageAlt}
             />
