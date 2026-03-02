@@ -13,7 +13,9 @@ export function Testimonial() {
       <section id="testimonial-section" className="px-4 py-6">
         <div className="mx-auto max-w-7xl">
           <header className="mb-6 space-y-1 text-center">
-            <p className="text-accent text-base font-medium">{label}</p>
+            <p className="text-primary text-base font-medium uppercase">
+              {label}
+            </p>
             <h2 className="text-4xl leading-tight font-bold">{title}</h2>
           </header>
 
@@ -27,7 +29,7 @@ export function Testimonial() {
             }
           })}
 
-          <div className="columns-1 gap-4 sm:gap-6 sm:columns-2 md:columns-3">
+          <div className="columns-1 gap-4 sm:columns-2 sm:gap-6 md:columns-3">
             {testimonialContent.map((item, index) => {
               if (index > 0) {
                 return (
@@ -55,7 +57,7 @@ function TestimonialCard({
 }: testimonialContentType & { index: number }) {
   return (
     <figure
-      className={`bg-base-200 border-base-300 mb-4 sm:mb-6 rounded-2xl border ${index === 0 ? "p-8" : "break-inside-avoid p-6"}`}
+      className={`bg-base-200 border-base-300 mb-4 rounded-2xl border sm:mb-6 ${index === 0 ? "p-8" : "break-inside-avoid p-6"}`}
     >
       <blockquote
         className={`leading-relaxed ${index === 0 ? "mb-8 text-xl" : "mb-4 text-sm"}`}
