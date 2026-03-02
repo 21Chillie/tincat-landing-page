@@ -104,7 +104,7 @@ function PricingCard({
 
             <div className="flex items-center justify-between flex-wrap">
               <h3 className="text-2xl font-bold">{tier}</h3>
-              <h4 className="text-2xl">
+              <h4 className="text-2xl text-primary font-medium">
                 ${subscription === "monthly" ? price.monthly : price.yearly}
                 <span className="text-base-content/80 text-sm">
                   /{subscription === "monthly" ? "month" : "year"}
