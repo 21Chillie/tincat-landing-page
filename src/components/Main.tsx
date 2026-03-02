@@ -1,3 +1,4 @@
+import { Faq } from "./faq/Faq";
 import { Feature } from "./feature/Feature";
 import Hero from "./hero/Hero";
 import { Pricing } from "./pricing/Pricing";
@@ -12,6 +13,7 @@ function Main() {
       <Feature></Feature>
       <Testimonial></Testimonial>
       <Pricing></Pricing>
+      <Faq></Faq>
     </main>
   );
 }
