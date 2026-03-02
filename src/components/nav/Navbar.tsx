@@ -11,7 +11,7 @@ function Navbar() {
   const { brandIconSrc, brandName, brandIconAlt } = brandContent;
 
   return (
-    <header className="sticky top-0 z-1 px-4 py-2 shadow-md backdrop-blur-2xl">
+    <header className="sticky top-0 z-2 px-4 py-2 shadow-md backdrop-blur-2xl">
       <nav className="mx-auto flex max-w-7xl items-center justify-between">
         <div className="flex items-center gap-2">
           <div className="bg-base-300 w-fit rounded-full p-1 shadow-sm">
@@ -29,7 +29,7 @@ function Navbar() {
 
         <a className="hidden md:block" href="#">
           <button
-            className="btn btn-circle btn-accent px-10 font-bold"
+            className="btn btn-circle btn-soft px-10 font-bold"
             type="button"
           >
             Login
