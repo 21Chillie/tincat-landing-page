@@ -15,7 +15,9 @@ export function Feature() {
         <div className="mx-auto max-w-7xl">
           <header className="mb-6 flex items-center justify-between gap-4">
             <div className="flex-1 space-y-1 text-center sm:text-left">
-              <p className="text-accent text-base font-medium">{label}</p>
+              <p className="text-primary text-base font-medium uppercase">
+                {label}
+              </p>
               <h2 className="text-4xl font-bold">{title}</h2>
             </div>
 
