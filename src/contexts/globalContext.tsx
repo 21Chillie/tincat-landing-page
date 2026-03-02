@@ -11,6 +11,8 @@ import { type ThemeType, selectedTheme } from "../content/setTheme";
 type providerValueType = {
   isSidebarOpen: boolean;
   toggleSidebar: () => void;
+  subLinkId: string | null;
+  setSubLinkId: React.Dispatch<React.SetStateAction<string | null>>;
 };
 
 const GlobalContext = createContext<providerValueType | null>(null);
@@ -18,6 +20,7 @@ const GlobalContext = createContext<providerValueType | null>(null);
 export function AppProvider({ children }: { children: ReactNode }) {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
   const [theme] = useState<ThemeType>(selectedTheme || "caramellatte");
+  const [subLinkId, setSubLinkId] = useState<string | null>(null);
 
   const toggleSidebar = () => {
     setIsSidebarOpen((prev) => !prev);
@@ -38,7 +41,9 @@ export function AppProvider({ children }: { children: ReactNode }) {
   }, [theme]);
 
   return (
-    <GlobalContext.Provider value={{ isSidebarOpen, toggleSidebar }}>
+    <GlobalContext.Provider
+      value={{ isSidebarOpen, toggleSidebar, subLinkId, setSubLinkId }}
+    >
       {children}
     </GlobalContext.Provider>
   );
