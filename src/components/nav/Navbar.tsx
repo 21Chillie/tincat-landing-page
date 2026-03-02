@@ -1,5 +1,4 @@
-import { nanoid } from "nanoid";
-import { links, type linksType } from "../../content/navigationContent.ts";
+import { links, type LinksType } from "../../content/navigationContent";
 
 import { brandContent } from "../../content/brandContent.ts";
 import { LuMenu } from "react-icons/lu";
@@ -13,21 +12,23 @@ function Navbar() {
   return (
     <header className="sticky top-0 z-2 px-4 py-2 shadow-md backdrop-blur-2xl">
       <nav className="mx-auto flex max-w-7xl items-center justify-between">
-        <div className="flex items-center gap-2">
-          <div className="bg-base-300 w-fit rounded-full p-1 shadow-sm">
-            <img className="h-8 w-8" src={brandIconSrc} alt={brandIconAlt} />
+        <a href="/">
+          <div className="flex items-center gap-2">
+            <div className="bg-base-300 w-fit rounded-full p-1 shadow-sm">
+              <img className="h-8 w-8" src={brandIconSrc} alt={brandIconAlt} />
+            </div>
+
+            <span className="text-3xl font-bold">{brandName}</span>
           </div>
+        </a>
 
-          <span className="text-3xl font-bold">{brandName}</span>
-        </div>
-
-        <ul className="hidden md:flex">
+        <ul className="hidden lg:flex">
           {links.map((link) => {
-            return <NavLinks key={nanoid()} {...link}></NavLinks>;
+            return <NavLinks key={link.heading} {...link}></NavLinks>;
           })}
         </ul>
 
-        <a className="hidden md:block" href="#">
+        <a className="hidden lg:block" href="#">
           <button
             className="btn btn-circle btn-soft px-10 font-bold"
             type="button"
@@ -38,7 +39,9 @@ function Navbar() {
 
         <button
           type="button"
-          className="btn btn-square btn-ghost grid place-items-center text-2xl md:hidden"
+          aria-label="open menu"
+          aria-controls="sidebar"
+          className="btn btn-square btn-ghost grid place-items-center text-2xl lg:hidden"
           onClick={toggleSidebar}
         >
           {isSidebarOpen ? <IoClose></IoClose> : <LuMenu></LuMenu>}
@@ -48,16 +51,19 @@ function Navbar() {
   );
 }
 
-function NavLinks({ text }: linksType) {
+function NavLinks({ heading }: LinksType) {
+  const { setSubLinkId } = UseGlobalContext();
+
   return (
     <>
       <li>
-        <a
+        <button
           className="hover:bg-accent-content hover:text-accent rounded-full px-5 py-3 text-base font-medium capitalize transition-colors duration-300"
-          href="#"
+          type="button"
+          onMouseEnter={() => setSubLinkId(heading)}
         >
-          {text}
-        </a>
+          {heading}
+        </button>
       </li>
     </>
   );
