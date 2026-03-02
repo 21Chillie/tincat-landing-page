@@ -10,7 +10,7 @@ function Sidebar() {
   return (
     <>
       <div
-        className={`fixed inset-0 z-2 bg-black/30 transition-opacity duration-300 ${isSidebarOpen ? "opacity-100" : "pointer-events-none block opacity-0 md:hidden"}`}
+        className={`fixed inset-0 z-3 bg-black/30 transition-opacity duration-300 ${isSidebarOpen ? "opacity-100" : "pointer-events-none block opacity-0 md:hidden"}`}
         onClick={toggleSidebar}
       ></div>
 
