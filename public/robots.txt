@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://tincat.app/sitemap.xml
+Sitemap: https://tincat.chillie.workers.dev/sitemap.xml
