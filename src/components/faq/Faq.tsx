@@ -94,8 +94,8 @@ function FaqAccordionItem({
         ) : (
           <input aria-label={`accordion faq ${index}`} type="radio" name="my-accordion-2" />
         )}
-        <div className="collapse-title text-lg font-bold">{question}</div>
-        <div className="collapse-content text-base">{answer}</div>
+        <div className="collapse-title text-base md:text-lg font-bold">{question}</div>
+        <div className="collapse-content text-sm md:text-base">{answer}</div>
       </div>
     </>
   );
