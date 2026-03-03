@@ -1,4 +1,3 @@
-import { nanoid } from "nanoid";
 import {
   testimonialHeadingContent,
   type testimonialContentType,
@@ -7,6 +6,7 @@ import { testimonialContent } from "../../content/testimonialContent";
 
 export function Testimonial() {
   const { label, title } = testimonialHeadingContent;
+  const [firstTestimonial, ...remainingTestimonials] = testimonialContent;
 
   return (
     <>
@@ -19,28 +19,20 @@ export function Testimonial() {
             <h2 className="text-4xl leading-tight font-bold">{title}</h2>
           </header>
 
-          {testimonialContent.map((item, index) => {
-            if (index === 0) {
-              return (
-                <div className="hidden sm:block" key={nanoid()}>
-                  <TestimonialCard index={index} {...item}></TestimonialCard>
-                </div>
-              );
-            }
-          })}
+          {firstTestimonial && (
+            <div className="hidden sm:block">
+              <TestimonialCard index={0} {...firstTestimonial}></TestimonialCard>
+            </div>
+          )}
 
           <div className="columns-1 gap-4 sm:columns-2 sm:gap-6 md:columns-3">
-            {testimonialContent.map((item, index) => {
-              if (index > 0) {
-                return (
-                  <TestimonialCard
-                    key={nanoid()}
-                    index={index}
-                    {...item}
-                  ></TestimonialCard>
-                );
-              }
-            })}
+            {remainingTestimonials.map((item, index) => (
+              <TestimonialCard
+                key={item.username}
+                index={index + 1}
+                {...item}
+              ></TestimonialCard>
+            ))}
           </div>
         </div>
       </section>
@@ -70,6 +62,10 @@ function TestimonialCard({
             src={imgSrc}
             alt={`${name} profile`}
             className="outline-accent h-12 w-12 rounded-full object-cover outline-1"
+            width={48}
+            height={48}
+            loading="lazy"
+            decoding="async"
           />
           <div>
             <p className="font-semibold">{name}</p>
