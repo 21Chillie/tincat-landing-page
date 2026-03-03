@@ -16,7 +16,7 @@ function Hero() {
             <h1 className="text-base-content mb-6 text-5xl font-extrabold">
               {title}
             </h1>
-            <p className="text-base-content/70 text-lg">{description}</p>
+            <p className="text-base-content/90 text-lg">{description}</p>
 
             <div className="mt-6 flex flex-col items-center gap-4 md:flex-row">
               <button
@@ -50,6 +50,10 @@ function Hero() {
               className="h-full w-full object-contain md:max-w-64 lg:max-w-72"
               src={imageSrc}
               alt={imageAlt}
+              width={288}
+              height={384}
+              loading="eager"
+              decoding="async"
             />
           </figure>
         </header>

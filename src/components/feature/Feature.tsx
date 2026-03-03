@@ -1,4 +1,3 @@
-import { nanoid } from "nanoid";
 import {
   featureHeaderContent,
   featureCardsContent,
@@ -8,6 +7,7 @@ import {
 
 export function Feature() {
   const { title, description, label } = featureHeaderContent;
+  const [firstFeatureCard, ...remainingFeatureCards] = featureCardsContent;
 
   return (
     <>
@@ -27,14 +27,8 @@ export function Feature() {
           </header>
 
           <article className="bg-base-200 outline-base-300 grid grid-cols-1 gap-4 rounded-2xl p-6 outline-1 sm:grid-cols-2 md:grid-cols-4 md:px-6 md:pt-6 md:pb-0 lg:place-items-center">
-            {featureCardsContent.map(
-              (content: featureCardContentType, index) => {
-                if (index === 0) {
-                  return (
-                    <FeatureCard key={nanoid()} {...content}></FeatureCard>
-                  );
-                }
-              },
+            {firstFeatureCard && (
+              <FeatureCard key={firstFeatureCard.title} {...firstFeatureCard} />
             )}
 
             <figure className="col-span-2 row-span-2 hidden md:grid md:place-items-end">
@@ -42,22 +36,20 @@ export function Feature() {
                 className="h-full w-full object-contain"
                 src={productImageContent.firstImgSrc}
                 alt=""
+                width={736}
+                height={736}
+                loading="lazy"
+                decoding="async"
               />
             </figure>
 
-            {featureCardsContent.map(
-              (content: featureCardContentType, index) => {
-                if (index > 0) {
-                  return (
-                    <FeatureCard
-                      key={nanoid()}
-                      index={index}
-                      {...content}
-                    ></FeatureCard>
-                  );
-                }
-              },
-            )}
+            {remainingFeatureCards.map((content, index) => (
+              <FeatureCard
+                key={content.title}
+                index={index + 1}
+                {...content}
+              ></FeatureCard>
+            ))}
           </article>
         </div>
       </section>
@@ -79,7 +71,7 @@ function FeatureCard({
         <span className="text-4xl">{icon}</span>
       </div>
       <h3 className="text-3xl font-bold lg:leading-relaxed">{title}</h3>
-      <p className="text-base-content/70 text-base text-pretty">
+      <p className="text-base-content/90 text-base text-pretty">
         {description}
       </p>
     </div>

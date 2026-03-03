@@ -18,6 +18,10 @@ export function Footer() {
                   className="h-8 w-8"
                   src={brandIconSrc}
                   alt={brandIconAlt}
+                  width={32}
+                  height={32}
+                  loading="lazy"
+                  decoding="async"
                 />
               </div>
               <span className="text-2xl font-bold">{brandName}</span>
@@ -37,6 +41,7 @@ export function Footer() {
                     aria-label={social.label}
                     className="btn btn-ghost btn-sm btn-square bg-base-200 text-xl"
                     target="_blank"
+                    rel="noopener noreferrer"
                   >
                     {social.icon}
                   </a>
@@ -53,7 +58,7 @@ export function Footer() {
                   <li key={link.text}>
                     <a
                       href={link.href}
-                      className="text-base-content/70 hover:text-base-content text-sm transition-colors"
+                      className="text-base-content/90 hover:text-base-content text-sm transition-colors"
                     >
                       {link.text}
                     </a>
@@ -69,12 +74,13 @@ export function Footer() {
 
         {/* Bottom section */}
         <div className="flex flex-col items-center justify-between gap-4 sm:flex-row">
-          <p className="text-base-content/70 text-sm">
+          <p className="text-base-content/90 text-sm">
             © {new Date().getFullYear()} TinCat. All rights reserved. Design by{" "}
             <a
               className="text-accent font-bold underline"
               href="https://github.com/21Chillie"
               target="_blank"
+              rel="noopener noreferrer"
             >
               @Chillie
             </a>
