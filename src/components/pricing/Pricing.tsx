@@ -135,13 +135,11 @@ function PricingCard({
         </div>
 
         <footer>
-          <a href="#" role="button">
-            <button
-              className={`btn btn-circle w-full font-bold ${isPopular ? "btn-accent" : "btn-soft"}`}
-              type="button"
-            >
-              {cta}
-            </button>
+          <a
+            href="#"
+            className={`btn btn-circle w-full font-bold ${isPopular ? "btn-accent" : "btn-soft"}`}
+          >
+            {cta}
           </a>
         </footer>
       </div>
