@@ -8,11 +8,7 @@ export type LinksType = {
   links: SubLinkType[];
 };
 
-export type SocialLink = {
-  label: string;
-  href: string;
-  icon: React.ReactNode;
-};
+
 
 export const links: LinksType[] = [
   {
@@ -61,30 +57,4 @@ export const links: LinksType[] = [
   },
 ];
 
-export const socialLinks: SocialLink[] = [
-  {
-    label: "Instagram",
-    href: "#",
-    icon: <span className="bg-base-content/20 block h-5 w-5 rounded" />,
-  },
-  {
-    label: "Twitter / X",
-    href: "#",
-    icon: <span className="bg-base-content/20 block h-5 w-5 rounded" />,
-  },
-  {
-    label: "TikTok",
-    href: "#",
-    icon: <span className="bg-base-content/20 block h-5 w-5 rounded" />,
-  },
-  {
-    label: "Facebook",
-    href: "#",
-    icon: <span className="bg-base-content/20 block h-5 w-5 rounded" />,
-  },
-  {
-    label: "Github",
-    href: "#",
-    icon: <span className="bg-base-content/20 block h-5 w-5 rounded" />,
-  },
-];
+
