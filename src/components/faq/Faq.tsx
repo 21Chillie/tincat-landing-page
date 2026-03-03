@@ -1,4 +1,3 @@
-import { nanoid } from "nanoid";
 import {
   faqContactContent,
   faqContent,
@@ -41,7 +40,7 @@ export function Faq() {
             {faqContent.map((faq, index) => {
               return (
                 <FaqAccordionItem
-                  key={nanoid()}
+                  key={faq.question}
                   {...faq}
                   index={index}
                 ></FaqAccordionItem>
@@ -68,6 +67,7 @@ function FaqSupport({
         className="hover:bg-base-300 hover:border-base-300 flex gap-3 rounded-2xl py-4 transition-all hover:px-4"
         href={value}
         target="_blank"
+        rel="noopener noreferrer"
       >
         <span className="bg-base-100 text-accent h-fit rounded-xl p-2 text-xl">{icon}</span>
         <div>
