@@ -1,4 +1,4 @@
-import { links, type LinksType } from "../../content/navigationContent";
+import { type LinksType, links } from "../../content/navigationContent.ts";
 
 import { brandContent } from "../../content/brandContent.ts";
 import { LuMenu } from "react-icons/lu";
