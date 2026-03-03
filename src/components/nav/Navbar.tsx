@@ -15,7 +15,13 @@ function Navbar() {
         <a href="/">
           <div className="flex items-center gap-2">
             <div className="bg-base-300 w-fit rounded-full p-1 shadow-sm">
-              <img className="h-8 w-8" src={brandIconSrc} alt={brandIconAlt} />
+              <img
+                className="h-8 w-8"
+                src={brandIconSrc}
+                alt={brandIconAlt}
+                width={32}
+                height={32}
+              />
             </div>
 
             <span className="text-3xl font-bold">{brandName}</span>
@@ -28,13 +34,8 @@ function Navbar() {
           })}
         </ul>
 
-        <a className="hidden lg:block" href="#">
-          <button
-            className="btn btn-circle btn-soft px-10 font-bold"
-            type="button"
-          >
-            Login
-          </button>
+        <a className="btn btn-circle btn-soft hidden px-10 font-bold lg:flex" href="#">
+          Login
         </a>
 
         <button
