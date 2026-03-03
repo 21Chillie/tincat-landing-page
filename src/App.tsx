@@ -1,3 +1,4 @@
+import { Footer } from "./components/footer/Footer";
 import Main from "./components/Main";
 import Navbar from "./components/nav/Navbar";
 import Sidebar from "./components/nav/Sidebar";
@@ -10,6 +11,7 @@ function App() {
       <SubLink></SubLink>
       <Sidebar></Sidebar>
       <Main></Main>
+      <Footer></Footer>
     </div>
   );
 }
