@@ -1,3 +1,9 @@
+/**
+ * Customization guide:
+ * - You can customize: selectedTheme value.
+ * - Do not customize: export names (ThemeType, selectedTheme). Keep selectedTheme within ThemeType.
+ * - How: set selectedTheme to one of the listed DaisyUI theme names.
+ */
 export type ThemeType =
   | "light"
   | "dark"

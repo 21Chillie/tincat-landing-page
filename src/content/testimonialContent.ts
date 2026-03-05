@@ -6,6 +6,13 @@ import user5 from "../assets/images/testimonial-section/user-5.webp";
 import user6 from "../assets/images/testimonial-section/user-6.webp";
 import user7 from "../assets/images/testimonial-section/user-7.webp";
 
+/**
+ * Customization guide:
+ * - You can customize: heading text, quote, name, username, and profile image.
+ * - Do not customize: required keys (quote, name, username, imgSrc) and export names.
+ * - How: edit entries in testimonialContent and keep unique usernames for stable rendering keys.
+ */
+
 export type testimonialHeadingType = {
   label: string;
   title: string;

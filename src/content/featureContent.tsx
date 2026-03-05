@@ -1,3 +1,9 @@
+/**
+ * Customization guide:
+ * - You can customize: heading label/title/description, card title/description/icon, product image.
+ * - Do not customize: required keys in featureHeaderContent/featureCardsContent/productImageContent.
+ * - How: edit values in exported objects/arrays; keep card keys as title, description, icon.
+ */
 import { RiHeartsFill } from "react-icons/ri";
 import { FaCat, FaCalendarDay, FaLocationDot } from "react-icons/fa6";
 

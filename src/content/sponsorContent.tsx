@@ -14,6 +14,13 @@ type sponsorType = {
   imgSrc: React.JSX.Element | string;
 };
 
+/**
+ * Customization guide:
+ * - You can customize: sponsor name and imgSrc (icon component or string source).
+ * - Do not customize: required keys (name, imgSrc) and exported name (sponsors).
+ * - How: replace existing items in sponsors array or add/remove entries with the same keys.
+ */
+
 export const sponsors: sponsorType[] = [
   { name: "Samsung Pay", imgSrc: <SiSamsungpay></SiSamsungpay> },
   { name: "Morrisons", imgSrc: <SiMorrisons></SiMorrisons> },

@@ -1,3 +1,9 @@
+/**
+ * Customization guide:
+ * - You can customize: footer description, social link labels, href, and icons.
+ * - Do not customize: key names (label, href, icon) and export names (footerContent, socialLinks).
+ * - How: edit existing items or add/remove socialLinks entries with the same structure.
+ */
 import {
   AiFillInstagram,
   AiFillDribbbleCircle,

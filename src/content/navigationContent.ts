@@ -1,3 +1,9 @@
+/**
+ * Customization guide:
+ * - You can customize: heading text, sub-link text, and href URLs.
+ * - Do not customize: object key names (heading, links, text, href) or exported name (links).
+ * - How: edit labels/URLs inside the links array; keep the same data structure.
+ */
 export type SubLinkType = {
   text: string;
   href: string;
@@ -56,5 +62,4 @@ export const links: LinksType[] = [
     ],
   },
 ];
-
 

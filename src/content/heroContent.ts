@@ -1,3 +1,9 @@
+/**
+ * Customization guide:
+ * - You can customize: title, description, cta, totalReviews, imageSrc, imageAlt, rating (1-5).
+ * - Do not customize: heroContentType keys and exported name (heroContent).
+ * - How: edit text/number values and swap the image import used by imageSrc.
+ */
 import heroImg from "../assets/images/heroes-section/hero-img.webp";
 
 type heroContentType = {

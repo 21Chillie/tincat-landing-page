@@ -1,3 +1,9 @@
+/**
+ * Customization guide:
+ * - You can customize: faq heading, contact cards, question/answer content, and icons.
+ * - Do not customize: required keys for contact and faq items, plus export names.
+ * - How: edit faqHeading/faqContactContent/faqContent values; keep data shape unchanged.
+ */
 import { IoLogoWhatsapp } from "react-icons/io";
 import { MdEmail } from "react-icons/md";
 import { IoMdChatbubbles } from "react-icons/io";

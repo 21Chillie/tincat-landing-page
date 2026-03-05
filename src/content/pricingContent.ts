@@ -1,3 +1,9 @@
+/**
+ * Customization guide:
+ * - You can customize: heading text, plan description, price, features, cta, and isPopular.
+ * - Do not customize: required keys in PricingContentType. Keep tier values in sync with PricingTier type.
+ * - How: edit pricingContent array values; if adding a new tier, update PricingTier first.
+ */
 type PricingTier = "Kitten" | "Cat Daddy" | "Top Cat";
 
 type PricingPrice = {
