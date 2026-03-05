@@ -95,7 +95,7 @@ This template is intentionally simple:
 Recommended workflow:
 
 1. Edit one content file at a time
-2. Check the page in `npm run dev`
+2. Check the page in `bun/npm run dev`
 3. Keep data shapes and required keys unchanged
 
 > For detailed customization instructions, see [HOWTO.md](./HOWTO.md).
